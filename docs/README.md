@@ -40,6 +40,7 @@
 - [ ]  **DiscountType**
    - List<Integer> weekend = List.of(1,2,8,9,15,16,22,23,29,30)
    - List<Integer> star = List.of(3,10,17,24,25,31)
+   - int day
    - boolean isChristmasDiscount
    - boolean isStarDiscount
    - String weekDiscountType  디저트 or 메인
@@ -61,6 +62,7 @@
    - [ ]  별 표시된 날짜의 할인 계산 후 반환 (**`calculateStarDiscount(boolean isStarDiscount)`**)
    - [ ]  주말 할인을 계산 후 반환 (**`calculateWeekendDiscount(Order order, String weekDiscountType)`**)
    - [ ]  증정품 가격 반환 (**`calculateGiftEvent(boolean isGiftEvent)`**)
+   - [ ]  날짜 반환 (**`getDay()`**)
    - [ ]  크리스마스 할인 금액 반환 (**`getChristmasDiscount()`**)
    - [ ]  별 표시된 날짜 할인 금액 반환 (**`getStarDiscount()`**)
    - [ ]  주말 할인 금액 반환 (**`getWeekDiscount()`**)
