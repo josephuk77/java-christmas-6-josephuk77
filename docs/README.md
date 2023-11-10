@@ -19,7 +19,7 @@
 
 ## 메세지 **(Message)**
 
-- [ ]  예외처리 메세지 (**`ExceptionMessage`**)
+- [x]  예외처리 메세지 (**`ExceptionMessage`**)
 - [ ]  정상 실행 메세지 (**`RunMessage`**)
 
 ## **도메인 (Domain)**
