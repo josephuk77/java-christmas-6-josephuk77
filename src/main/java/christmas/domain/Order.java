@@ -9,12 +9,8 @@ public class Order {
     private static final String ORDER_PATTERN = "([가-힣]+)-(1[0-9]|20|[1-9])";
     private final Map<MenuItem, Integer> items;
 
-    public Order() {
+    public Order(String input) {
         items = new HashMap<>();
-    }
-
-    // Public methods
-    public void addItem(String input) {
         validateInput(input);
         addItemsFromString(input);
         validateMenuCount();
