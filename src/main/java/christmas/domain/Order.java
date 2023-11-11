@@ -67,14 +67,8 @@ public class Order {
         String itemName = parts[0].trim();
         int quantity = Integer.parseInt(parts[1].trim());
 
-        validateMenuItem(itemName);
+        MenuItem.fromDisplayName(itemName);
         addMenuItem(itemName, quantity);
-    }
-
-    private void validateMenuItem(String itemName) {
-        if (!menuItemExists(itemName)) {
-            throw new IllegalArgumentException(ExceptionMessage.INVALID_ORDER.getMessage());
-        }
     }
 
     private void addMenuItem(String itemName, int quantity) {
@@ -83,15 +77,6 @@ public class Order {
             throw new IllegalArgumentException(ExceptionMessage.INVALID_ORDER.getMessage());
         }
         items.put(menuItem, items.getOrDefault(menuItem, 0) + quantity);
-    }
-
-    private boolean menuItemExists(String itemName) {
-        try {
-            MenuItem.fromDisplayName(itemName);
-            return true;
-        } catch (IllegalArgumentException e) {
-            return false;
-        }
     }
 
     private boolean isOnlyBeverages() {
