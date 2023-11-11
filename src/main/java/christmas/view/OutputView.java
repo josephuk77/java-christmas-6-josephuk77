@@ -97,7 +97,7 @@ public class OutputView {
     public void printTotalBenefitAmountMessage(DiscountCalculator discountCalculator) {
         System.out.print(RunMessage.TOTLA_BENEFIT.getMessage());
         if (discountCalculator.totalDiscount() == 0) {
-            System.out.print(RunMessage.AMOUNT.getMessage());
+            System.out.printf(RunMessage.AMOUNT.getMessage(),0);
         }
         if (discountCalculator.totalDiscount() != 0) {
             System.out.printf(RunMessage.MINUS_AMOUNT.getMessage(),
