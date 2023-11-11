@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 public class Order {
-    private static final String ORDER_PATTERN = "([가-힣]+)-(1[0-9]|20|[1-9])";
+    private static final String ORDER_PATTERN = "([가-힣]+)-(1[0-9]|20|[1-9])(,\\s*[가-힣]+-(1[0-9]|20|[1-9]))*";
     private final Map<MenuItem, Integer> items;
 
     public Order(String input) {
@@ -64,7 +64,7 @@ public class Order {
 
     private void processOrderItem(String orderItem) {
         String[] parts = orderItem.trim().split("-");
-        String itemName = parts[0].trim().toUpperCase();
+        String itemName = parts[0].trim();
         int quantity = Integer.parseInt(parts[1].trim());
 
         validateMenuItem(itemName);
@@ -78,7 +78,7 @@ public class Order {
     }
 
     private void addMenuItem(String itemName, int quantity) {
-        MenuItem menuItem = MenuItem.valueOf(itemName);
+        MenuItem menuItem = MenuItem.fromDisplayName(itemName);
         if (items.containsKey(menuItem)) {
             throw new IllegalArgumentException(ExceptionMessage.INVALID_ORDER.getMessage());
         }
@@ -87,7 +87,7 @@ public class Order {
 
     private boolean menuItemExists(String itemName) {
         try {
-            MenuItem.valueOf(itemName);
+            MenuItem.fromDisplayName(itemName);
             return true;
         } catch (IllegalArgumentException e) {
             return false;
