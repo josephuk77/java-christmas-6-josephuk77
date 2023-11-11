@@ -75,9 +75,9 @@
 
 ## **뷰 (View)**
 
-- [ ]  InputView
-   - [ ]  날짜 입력 (**`inputDay`**)
-   - [ ]  음식 입력 (**`inputOrder`**)
+- [x]  InputView
+   - [x]  날짜 입력 (**`inputDay`**)
+   - [x]  음식 입력 (**`inputOrder`**)
 - [ ]  OutputView
    - [ ]  시작 메세지
    - [ ]  날짜 입력 안내 메세지(**`printDayInputMessage`**)
