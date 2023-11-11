@@ -53,20 +53,21 @@
    - [x]  starDiscount 반환 (**`getStarDiscountStatus()`**)
    - [x]  weekDiscount 반환 (**`**getWeekDiscount()`**)
    - [x]  giftEvent 반환 (**`getGiftEventStatus()`**)
-- [ ]  **DiscountCalculator**
+- [x]  **DiscountCalculator**
    - int christmasDiscount
    - int starDiscount
    - int weekDiscount
    - int giftEvent
-   - [ ]  크리스마스 할인 계산 후 반환 (**`calculateChristmasDiscount(int day, boolean isChristmasDiscount)`**)
-   - [ ]  별 표시된 날짜의 할인 계산 후 반환 (**`calculateStarDiscount(boolean isStarDiscount)`**)
-   - [ ]  주말 할인을 계산 후 반환 (**`calculateWeekendDiscount(Order order, String weekDiscountType)`**)
-   - [ ]  증정품 가격 반환 (**`calculateGiftEvent(boolean isGiftEvent)`**)
-   - [ ]  날짜 반환 (**`getDay()`**)
-   - [ ]  크리스마스 할인 금액 반환 (**`getChristmasDiscount()`**)
-   - [ ]  별 표시된 날짜 할인 금액 반환 (**`getStarDiscount()`**)
-   - [ ]  주말 할인 금액 반환 (**`getWeekDiscount()`**)
-   - [ ]  증정 이벤트 금액 반환 (**`getGiftEvent()`**)
+   - [x]  크리스마스 할인 계산 후 반환 (**`calculateChristmasDiscount(int day, boolean isChristmasDiscount)`**)
+   - [x]  별 표시된 날짜의 할인 계산 후 반환 (**`calculateStarDiscount(boolean isStarDiscount)`**)
+   - [x]  주말 할인을 계산 후 반환 (**`calculateWeekendDiscount(Order order, String weekDiscountType)`**)
+   - [x]  증정품 가격 반환 (**`calculateGiftEvent(boolean isGiftEvent)`**)
+   - [x]  총 할인금액 반환 (**`totalDiscount()`**)
+   - [x]  날짜 반환 (**`getDay()`**)
+   - [x]  크리스마스 할인 금액 반환 (**`getChristmasDiscount()`**)
+   - [x]  별 표시된 날짜 할인 금액 반환 (**`getStarDiscount()`**)
+   - [x]  주말 할인 금액 반환 (**`getWeekDiscount()`**)
+   - [x]  증정 이벤트 금액 반환 (**`getGiftEvent()`**)
 - [ ]  **EventBadge**
    - String badge
    - int totalDiscount
