@@ -68,13 +68,10 @@
    - [x]  별 표시된 날짜 할인 금액 반환 (**`getStarDiscount()`**)
    - [x]  주말 할인 금액 반환 (**`getWeekDiscount()`**)
    - [x]  증정 이벤트 금액 반환 (**`getGiftEvent()`**)
-- [ ]  **EventBadge**
+- [x]  **EventBadge**
    - String badge
-   - int totalDiscount
-   - [ ]  총할인 금액 반환(**`calculateTotalDiscount(DiscountCalculator discountCalculator)`**)
-   - [ ]  배지 선정(**`eventBadge(int totalDiscount)`**)
-   - [ ]  배지 반환 (**`getBadge()`**)
-   - [ ]  총혜택 금액 반환 (**`getTotalDiscount()`**)
+   - [x]  배지 선정(**`eventBadge(int totalDiscount)`**)
+   - [x]  배지 반환 (**`getBadge()`**)
 
 ## **뷰 (View)**
 
