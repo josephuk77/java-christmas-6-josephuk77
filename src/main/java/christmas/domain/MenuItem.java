@@ -1,5 +1,7 @@
 package christmas.domain;
 
+import christmas.Message.ExceptionMessage;
+
 public enum MenuItem {
     MUSHROOM_SOUP("양송이수프", 6000, "애피타이저"),
     TAPAS("타파스", 5500, "애피타이저"),
@@ -22,6 +24,15 @@ public enum MenuItem {
         this.name = name;
         this.price = price;
         this.category = category;
+    }
+
+    public static MenuItem fromDisplayName(String displayName) {
+        for (MenuItem item : MenuItem.values()) {
+            if (item.name.equals(displayName)) {
+                return item;
+            }
+        }
+        throw new IllegalArgumentException(ExceptionMessage.INVALID_ORDER.getMessage());
     }
 
     public String getName() {
