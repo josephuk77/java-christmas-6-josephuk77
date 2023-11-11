@@ -37,7 +37,7 @@
    - [x]  주문에 메뉴 아이템을 추가 (**`addItem(MenuItem item, int quantity)`**)
    - [x]  할인 전 총주문 금액을 계산 (**`getTotalPrice()`**)
    - [x]  주문된 모든 아이템과 수량을 반환 (**`getItems()`**)
-- [ ]  **DiscountType**
+- [x]  **DiscountType**
    - List<Integer> weekend = List.of(1,2,8,9,15,16,22,23,29,30)
    - List<Integer> star = List.of(3,10,17,24,25,31)
    - int day
@@ -45,14 +45,14 @@
    - boolean isStarDiscount
    - String weekDiscountType  디저트 or 메인
    - boolean isGiftEvent
-   - [ ]  날짜가 25일전이면 true반환 (**`christmasDiscountCheck(int day)`**)
-   - [ ]  날짜가 star에 있으면 true반환 (**`startDiscountCheck(int day)`**)
-   - [ ]  날짜가 weekend에 있으면 메인 반환없으면 디저트 반환 (**`weekDiscount(int day)`**)
-   - [ ]  총 금액이 12만원 이상이면 true반환 (**`giftEnent(int totalPrize)`**)
-   - [ ]  christmasDiscount 반환 (**`getChristmasDiscountStatus()`**)
-   - [ ]  starDiscount 반환 (**`getStarDiscountStatus()`**)
-   - [ ]  weekDiscount 반환 (**`**getWeekDiscount()`**)
-   - [ ]  giftEvent 반환 (**`getGiftEventStatus()`**)
+   - [x]  날짜가 25일전이면 true반환 (**`christmasDiscountCheck(int day)`**)
+   - [x]  날짜가 star에 있으면 true반환 (**`startDiscountCheck(int day)`**)
+   - [x]  날짜가 weekend에 있으면 메인 반환없으면 디저트 반환 (**`weekDiscount(int day)`**)
+   - [x]  총 금액이 12만원 이상이면 true반환 (**`giftEnent(int totalPrize)`**)
+   - [x]  christmasDiscount 반환 (**`getChristmasDiscountStatus()`**)
+   - [x]  starDiscount 반환 (**`getStarDiscountStatus()`**)
+   - [x]  weekDiscount 반환 (**`**getWeekDiscount()`**)
+   - [x]  giftEvent 반환 (**`getGiftEventStatus()`**)
 - [ ]  **DiscountCalculator**
    - int christmasDiscount
    - int starDiscount
