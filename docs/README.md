@@ -78,18 +78,18 @@
 - [x]  InputView
    - [x]  날짜 입력 (**`inputDay`**)
    - [x]  음식 입력 (**`inputOrder`**)
-- [ ]  OutputView
-   - [ ]  시작 메세지
-   - [ ]  날짜 입력 안내 메세지(**`printDayInputMessage`**)
-   - [ ]  음식 입력 안내 메세지(**`printOrderInputMessage`**)
-   - [ ]  날짜 출력 메세지(**`printDayMessage`**)
-   - [ ]  주문 메뉴 안내 메세지(**`printOrderMenuMessage`**)
-   - [ ]  할인 전 총주문 금액 메세지 출력 (**`printTotalPriceBeforeDiscount`**)
-   - [ ]  증정 메뉴 메세지 출력 (**`printGiftMenuMessage`**)
-   - [ ]  혜택 내역 메세지 출력 (**`printBenefitDetailsMessage`**)
-   - [ ]  총혜택 금액 메세지 출력 (**`printTotalBenefitAmountMessage`**)
-   - [ ]  할인 후 예상 결제 금액 메세지 출력 (**`printExpectedPaymentAfterDiscount`**)
-   - [ ]  12월 이벤트 배지 메세지 출력 (**`printEventBadgeMessage`**)
+- [x]  OutputView
+   - [x]  시작 메세지
+   - [x]  날짜 입력 안내 메세지(**`printDayInputMessage`**)
+   - [x]  음식 입력 안내 메세지(**`printOrderInputMessage`**)
+   - [x]  날짜 출력 메세지(**`printDayMessage`**)
+   - [x]  주문 메뉴 안내 메세지(**`printOrderMenuMessage`**)
+   - [x]  할인 전 총주문 금액 메세지 출력 (**`printTotalPriceBeforeDiscount`**)
+   - [x]  증정 메뉴 메세지 출력 (**`printGiftMenuMessage`**)
+   - [x]  혜택 내역 메세지 출력 (**`printBenefitDetailsMessage`**)
+   - [x]  총혜택 금액 메세지 출력 (**`printTotalBenefitAmountMessage`**)
+   - [x]  할인 후 예상 결제 금액 메세지 출력 (**`printExpectedPaymentAfterDiscount`**)
+   - [x]  12월 이벤트 배지 메세지 출력 (**`printEventBadgeMessage`**)
 
 ## **컨트롤러 (Controller)**
 
