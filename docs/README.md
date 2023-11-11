@@ -31,12 +31,12 @@
    - [x]  메뉴 아이템의 종류 반환 (**`getCategory()`**)
    - [x]  메뉴 아이템의 이름 반환 (**`getName()`**)
    - [x]  메뉴 아이템의 가격 반환 (**`getPrice()`**)
-- [ ]  **Order**
+- [x]  **Order**
    - ORDER_PATTERN = "([가-힣]+)-(1[0-9]|20|[1-9])"
    - Map<MenuItem, Integer> items
-   - [ ]  주문에 메뉴 아이템을 추가 (**`addItem(MenuItem item, int quantity)`**)
-   - [ ]  할인 전 총주문 금액을 계산 (**`getTotalPrice()`**)
-   - [ ]  주문된 모든 아이템과 수량을 반환 (**`getItems()`**)
+   - [x]  주문에 메뉴 아이템을 추가 (**`addItem(MenuItem item, int quantity)`**)
+   - [x]  할인 전 총주문 금액을 계산 (**`getTotalPrice()`**)
+   - [x]  주문된 모든 아이템과 수량을 반환 (**`getItems()`**)
 - [ ]  **DiscountType**
    - List<Integer> weekend = List.of(1,2,8,9,15,16,22,23,29,30)
    - List<Integer> star = List.of(3,10,17,24,25,31)
