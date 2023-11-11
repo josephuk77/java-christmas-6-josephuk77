@@ -93,10 +93,10 @@
 
 ## **컨트롤러 (Controller)**
 
-- [ ]  CristmasController
-   - [ ]  애플리케이션 실행 (**`run()`**)
-   - [ ]  사용자 입력 처리 (**`processUserInput()`**)
-   - [ ]  주문 처리 (**`processOrder()`**)
-   - [ ]  할인 계산 및 적용 (**`calculateDiscounts()`**)
-   - [ ]  배지 부여(**`giveBadge()`**)
-   - [ ]  결과 출력 (**`displayResults()`**)
+- [x]  CristmasController
+   - [x]  애플리케이션 실행 (**`start()`**)
+   - [x]  사용자 입력 처리 (**`processUserInput()`**)
+   - [x]  주문 처리 (**`processOrder()`**)
+   - [x]  할인 계산 및 적용 (**`calculateDiscounts()`**)
+   - [x]  배지 부여(**`giveBadge()`**)
+   - [x]  결과 출력 (**`displayResults()`**)
