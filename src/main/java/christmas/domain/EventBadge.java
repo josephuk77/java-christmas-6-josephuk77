@@ -7,10 +7,10 @@ public class EventBadge {
         if (totalDiscount >= 20000) {
             badge = "산타";
         }
-        if (totalDiscount >= 10000) {
+        if (totalDiscount >= 10000 && totalDiscount < 20000) {
             badge = "트리";
         }
-        if (totalDiscount >= 5000) {
+        if (totalDiscount >= 5000 && totalDiscount < 10000) {
             badge = "별";
         }
         if (totalDiscount < 5000) {
