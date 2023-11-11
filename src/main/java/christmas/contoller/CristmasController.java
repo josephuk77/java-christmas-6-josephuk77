@@ -31,6 +31,7 @@ public class CristmasController {
     }
 
     public void processOrder() {
+        discountType.updateGiftEventStatus(order.getTotalPrice());
         outputView.printDayMessage(discountType.getDay());
         outputView.printOrderMenuMessage(order);
         outputView.printTotalPriceBeforeDiscountMessage(order);
