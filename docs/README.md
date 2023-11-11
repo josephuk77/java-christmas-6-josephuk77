@@ -24,13 +24,13 @@
 
 ## **도메인 (Domain)**
 
-- [ ]  **MenuItem(enum)**
+- [x]  **MenuItem(enum)**
    - String category
    - String name
    - int price
-   - [ ]  메뉴 아이템의 종류 반환 (**`getCategory()`**)
-   - [ ]  메뉴 아이템의 이름 반환 (**`getName()`**)
-   - [ ]  메뉴 아이템의 가격 반환 (**`getPrice()`**)
+   - [x]  메뉴 아이템의 종류 반환 (**`getCategory()`**)
+   - [x]  메뉴 아이템의 이름 반환 (**`getName()`**)
+   - [x]  메뉴 아이템의 가격 반환 (**`getPrice()`**)
 - [ ]  **Order**
    - ORDER_PATTERN = "([가-힣]+)-(1[0-9]|20|[1-9])"
    - Map<MenuItem, Integer> items
