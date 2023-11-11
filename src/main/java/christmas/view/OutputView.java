@@ -72,10 +72,10 @@ public class OutputView {
     private void printWeekDiscount(DiscountCalculator discountCalculator, String weekDiscountType) {
         if (discountCalculator.getWeekDiscount() != 0) {
             String formattedWeekDiscount = String.format("%,d", discountCalculator.getWeekDiscount());
-            if (weekDiscountType.equals("메인")) {
+            if (weekDiscountType.equals("디저트")) {
                 System.out.printf(RunMessage.WEEKDAY_DISCOUNT.getMessage(), formattedWeekDiscount);
             }
-            if (weekDiscountType.equals("디저트")) {
+            if (weekDiscountType.equals("메인")) {
                 System.out.printf(RunMessage.WEEKEND_DISCOUNT.getMessage(), formattedWeekDiscount);
             }
         }
