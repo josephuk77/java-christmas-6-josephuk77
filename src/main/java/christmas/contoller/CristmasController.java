@@ -39,9 +39,9 @@ public class CristmasController {
 
     public void calculateDiscounts() {
         discountCalculator = new DiscountCalculator();
-        discountCalculator.calculateChristmasDiscount(discountType.getDay(), discountType.getChristmasDiscountStatus());
-        discountCalculator.calculateStarDiscount(discountType.getStarDiscountStatus());
-        discountCalculator.calculateWeekendDiscount(order, discountType.getWeekDiscount());
+        discountCalculator.calculateChristmasDiscount(discountType.getDay(), discountType.getChristmasDiscountStatus(), order.getTotalPrice());
+        discountCalculator.calculateStarDiscount(discountType.getStarDiscountStatus(), order.getTotalPrice());
+        discountCalculator.calculateWeekendDiscount(order, discountType.getWeekDiscount(), order.getTotalPrice());
         discountCalculator.calculateGiftEvent(discountType.getGiftEventStatus());
         outputView.printBenefitDetailsMessage(discountCalculator, discountType.getWeekDiscount());
         outputView.printTotalBenefitAmountMessage(discountCalculator);

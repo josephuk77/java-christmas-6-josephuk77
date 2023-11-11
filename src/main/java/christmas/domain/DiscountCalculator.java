@@ -15,22 +15,22 @@ public class DiscountCalculator {
         this.giftEvent = 0;
     }
 
-    public void calculateChristmasDiscount(int day, boolean isChristmasDiscount) {
-        if (isChristmasDiscount) {
+    public void calculateChristmasDiscount(int day, boolean isChristmasDiscount, int totalPrice) {
+        if (isChristmasDiscount && totalPrice >= 10000) {
             this.christmasDiscount = 1000 + (day - 1) * 100;
         }
     }
 
-    public void calculateStarDiscount(boolean isStarDiscount) {
-        if (isStarDiscount) {
+    public void calculateStarDiscount(boolean isStarDiscount, int totalPrice) {
+        if (isStarDiscount && totalPrice >= 10000) {
             this.starDiscount = 1000;
         }
     }
 
-    public void calculateWeekendDiscount(Order order, String weekDiscountType) {
+    public void calculateWeekendDiscount(Order order, String weekDiscountType, int totalPrice) {
         int count = 0;
         for (Map.Entry<MenuItem, Integer> entry : order.getItems().entrySet()) {
-            if (weekDiscountType.equals(entry.getKey().getCategory())) {
+            if (weekDiscountType.equals(entry.getKey().getCategory()) && totalPrice >= 10000) {
                 count += entry.getValue();
             }
         }
