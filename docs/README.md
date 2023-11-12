@@ -35,24 +35,16 @@
    - ORDER_PATTERN = "([가-힣]+)-(1[0-9]|20|[1-9])"
    - Map<MenuItem, Integer> items
    - [x]  주문에 메뉴 아이템을 추가 (**`addItem(MenuItem item, int quantity)`**)
-   - [x]  할인 전 총주문 금액을 계산 (**`getTotalPrice()`**)
+   - [x]  할인 전 총주문 금액을 계산 (**`calculateTotalPrice()`**)
    - [x]  주문된 모든 아이템과 수량을 반환 (**`getItems()`**)
 - [x]  **DiscountType**
    - List<Integer> weekend = List.of(1,2,8,9,15,16,22,23,29,30)
    - List<Integer> star = List.of(3,10,17,24,25,31)
    - int day
-   - boolean isChristmasDiscount
-   - boolean isStarDiscount
-   - String weekDiscountType  디저트 or 메인
-   - boolean isGiftEvent
-   - [x]  날짜가 25일전이면 true반환 (**`christmasDiscountCheck(int day)`**)
-   - [x]  날짜가 star에 있으면 true반환 (**`startDiscountCheck(int day)`**)
-   - [x]  날짜가 weekend에 있으면 메인 반환없으면 디저트 반환 (**`weekDiscount(int day)`**)
-   - [x]  총 금액이 12만원 이상이면 true반환 (**`giftEnent(int totalPrize)`**)
-   - [x]  christmasDiscount 반환 (**`getChristmasDiscountStatus()`**)
-   - [x]  starDiscount 반환 (**`getStarDiscountStatus()`**)
-   - [x]  weekDiscount 반환 (**`**getWeekDiscount()`**)
-   - [x]  giftEvent 반환 (**`getGiftEventStatus()`**)
+   - [x]  날짜가 25일전이면 true반환 (**`christmasDiscountCheck()`**)
+   - [x]  날짜가 star에 있으면 true반환 (**`startDiscountCheck()`**)
+   - [x]  날짜가 weekend에 있으면 메인 반환없으면 디저트 반환 (**`weekDiscountCheck()`**)
+   - [x]  총 금액이 12만원 이상이면 true반환 (**`giftEventCheck(int totalPrize)`**)
 - [x]  **DiscountCalculator**
    - int christmasDiscount
    - int starDiscount
@@ -93,7 +85,7 @@
 
 ## **컨트롤러 (Controller)**
 
-- [x]  CristmasController
+- [x]  ChristmasController
   - [x] 애플리케이션의 메인 흐름을 제어합니다. (**`start()`**)
   - [x] 사용자로부터 방문 날짜를 입력받습니다. (**`inputDay()`**)
   - [x] 사용자로부터 주문할 메뉴와 수량을 입력받습니다. (**`inputOrder()`**)
