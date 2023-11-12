@@ -18,7 +18,7 @@ public class Order {
         validateOrder();
     }
 
-    public int getTotalPrice() {
+    public int calculateTotalPrice() {
         int total = 0;
         for (Map.Entry<MenuItem, Integer> entry : items.entrySet()) {
             total += entry.getKey().getPrice() * entry.getValue();
