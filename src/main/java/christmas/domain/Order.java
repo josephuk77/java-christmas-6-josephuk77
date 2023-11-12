@@ -1,6 +1,7 @@
 package christmas.domain;
 
 import christmas.Message.ExceptionMessage;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
@@ -26,7 +27,7 @@ public class Order {
     }
 
     public Map<MenuItem, Integer> getItems() {
-        return new HashMap<>(items);
+        return Collections.unmodifiableMap(items);
     }
 
     private void validateInput(String input) {
