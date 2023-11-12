@@ -35,7 +35,7 @@ public class OutputView {
 
     public void printTotalPriceBeforeDiscountMessage(Order order) {
         System.out.print(RunMessage.BEFORE_DISCOUNT.getMessage());
-        System.out.printf(RunMessage.AMOUNT.getMessage(), String.format("%,d", order.getTotalPrice()));
+        System.out.printf(RunMessage.AMOUNT.getMessage(), String.format("%,d", order.calculateTotalPrice()));
     }
 
     public void printGiftMenuMessage(boolean isGiftEvent) {
