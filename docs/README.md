@@ -94,9 +94,12 @@
 ## **컨트롤러 (Controller)**
 
 - [x]  CristmasController
-   - [x]  애플리케이션 실행 (**`start()`**)
-   - [x]  사용자 입력 처리 (**`processUserInput()`**)
-   - [x]  주문 처리 (**`processOrder()`**)
-   - [x]  할인 계산 및 적용 (**`calculateDiscounts()`**)
-   - [x]  배지 부여(**`giveBadge()`**)
-   - [x]  결과 출력 (**`displayResults()`**)
+  - [x] 애플리케이션의 메인 흐름을 제어합니다. (**`start()`**)
+  - [x] 사용자로부터 방문 날짜를 입력받습니다. (**`inputDay()`**)
+  - [x] 사용자로부터 주문할 메뉴와 수량을 입력받습니다. (**`inputOrder()`**)
+  - [x] 입력받은 날짜와 주문 메뉴를 출력합니다. (**`printDayAndOrder()`**)
+  - [x] 할인 전 총주문 금액과 증정 메뉴 여부를 출력합니다. (**`printTotalPriceAndGiftMenu()`**)
+  - [x] 할인 조건에 따라 할인 금액을 계산합니다. (**`calculateDiscounts()`**)
+  - [x] 할인 및 혜택 내역을 출력합니다. (**`printDiscountDetails()`**)
+  - [x] 총혜택 금액에 따라 이벤트 배지를 부여합니다. (**`assignBadge()`**)
+  - [x] 부여된 배지와 할인 후 예상 결제 금액을 출력합니다. (**`printBadge()`**)

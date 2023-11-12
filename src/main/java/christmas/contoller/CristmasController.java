@@ -7,6 +7,7 @@ import christmas.domain.Order;
 import christmas.view.InputView;
 import christmas.view.OutputView;
 
+
 public class CristmasController {
     InputView inputView = new InputView();
     OutputView outputView = new OutputView();
@@ -17,41 +18,57 @@ public class CristmasController {
 
     public void start() {
         outputView.start();
-        processUserInput();
-        processOrder();
+        inputDay();
+        inputOrder();
+        printDayAndOrder();
+        printTotalPriceAndGiftMenu();
         calculateDiscounts();
-        giveBadge();
+        printDiscountDetails();
+        assignBadge();
+        printBadge();
     }
 
-    public void processUserInput() {
+    private void inputDay() {
         outputView.printDayInputMessage();
         discountType = inputView.inputDay();
+    }
+
+    private void inputOrder() {
         outputView.printOrderInputMessage();
         order = inputView.inputOrder();
     }
 
-    public void processOrder() {
+    private void printDayAndOrder() {
         discountType.updateGiftEventStatus(order.getTotalPrice());
         outputView.printDayMessage(discountType.getDay());
         outputView.printOrderMenuMessage(order);
+    }
+
+    private void printTotalPriceAndGiftMenu() {
         outputView.printTotalPriceBeforeDiscountMessage(order);
         outputView.printGiftMenuMessage(discountType.getGiftEventStatus());
     }
 
-    public void calculateDiscounts() {
+    private void calculateDiscounts() {
         discountCalculator = new DiscountCalculator();
         discountCalculator.calculateChristmasDiscount(discountType.getDay(), discountType.getChristmasDiscountStatus(), order.getTotalPrice());
         discountCalculator.calculateStarDiscount(discountType.getStarDiscountStatus(), order.getTotalPrice());
         discountCalculator.calculateWeekendDiscount(order, discountType.getWeekDiscount(), order.getTotalPrice());
         discountCalculator.calculateGiftEvent(discountType.getGiftEventStatus());
+    }
+
+    private void printDiscountDetails() {
         outputView.printBenefitDetailsMessage(discountCalculator, discountType.getWeekDiscount());
         outputView.printTotalBenefitAmountMessage(discountCalculator);
         outputView.printExpectedPaymentAfterDiscount(order.getTotalPrice(), discountCalculator.totalDiscount());
     }
 
-    public void giveBadge() {
+    private void assignBadge() {
         eventBadge = new EventBadge();
         eventBadge.eventBadge(discountCalculator.totalDiscount());
+    }
+
+    private void printBadge() {
         outputView.printEventBadgeMessage(eventBadge.getBadge());
     }
 }
