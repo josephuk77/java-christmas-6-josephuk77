@@ -10,19 +10,11 @@ public class DiscountType {
     private static final String DAY_PATTERN = "^(3[01]|[12][0-9]|0?[1-9])$";
 
     private final int day;
-    private final boolean isChristmasDiscount;
-    private final boolean isStarDiscount;
-    private final String weekDiscountType;
-    private boolean isGiftEvent;
 
     public DiscountType(String input) {
         validateDay(input);
-        int day = parseDay(input);
 
-        this.day = day;
-        this.isChristmasDiscount = christmasDiscountCheck(day);
-        this.isStarDiscount = starDiscountCheck(day);
-        this.weekDiscountType = weekDiscount(day);
+        this.day = parseDay(input);
     }
 
     private void validateDay(String input) {
@@ -35,43 +27,26 @@ public class DiscountType {
         return Integer.parseInt(input);
     }
 
-    private boolean christmasDiscountCheck(int day) {
+    public boolean christmasDiscountCheck() {
         return day <= 25;
     }
 
-    private boolean starDiscountCheck(int day) {
+    public boolean starDiscountCheck() {
         return star.contains(day);
     }
 
-    private String weekDiscount(int day) {
+    public String weekDiscountCheck() {
         if(weekend.contains(day)) {
             return "메인";
         }
-
         return "디저트";
     }
 
-    public void updateGiftEventStatus(int totalPrice) {
-        this.isGiftEvent = totalPrice >= 120000;
+    public boolean giftEventCheck(int totalPrice) {
+        return totalPrice >= 120000;
     }
 
     public int getDay() {
         return day;
-    }
-
-    public boolean getChristmasDiscountStatus() {
-        return isChristmasDiscount;
-    }
-
-    public boolean getStarDiscountStatus() {
-        return isStarDiscount;
-    }
-
-    public String getWeekDiscount() {
-        return weekDiscountType;
-    }
-
-    public boolean getGiftEventStatus() {
-        return isGiftEvent;
     }
 }
