@@ -1,8 +1,11 @@
 package christmas;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+import christmas.domain.MenuItem;
 import christmas.domain.Order;
+import java.util.Map;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -62,5 +65,15 @@ public class OrderTest {
 
         assertThatThrownBy(() -> new Order(order))
                 .isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @Test
+    @DisplayName("주문받은 내역이 객체에 잘 저장되는지 테스트")
+    void orderDetailsTest() {
+        String order = "티본스테이크-3,제로콜라-2";
+
+        Order orderDetails = new Order(order);
+
+        assertThat(orderDetails.getItems()).isEqualTo(Map.of(MenuItem.T_BONE_STEAK, 3, MenuItem.ZERO_COLA, 2));
     }
 }
