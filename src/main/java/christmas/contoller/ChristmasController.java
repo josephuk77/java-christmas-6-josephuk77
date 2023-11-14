@@ -9,66 +9,80 @@ import christmas.view.OutputView;
 
 
 public class ChristmasController {
-    InputView inputView = new InputView();
-    OutputView outputView = new OutputView();
-    Order order;
-    DiscountType discountType;
-    DiscountCalculator discountCalculator;
-    EventBadge eventBadge;
+    private final InputView inputView = new InputView();
+    private final OutputView outputView = new OutputView();
 
     public void start() {
         outputView.start();
-        inputDay();
-        inputOrder();
-        printDayAndOrder();
-        printTotalPriceAndGiftMenu();
-        calculateDiscounts();
-        printDiscountDetails();
-        assignBadge();
-        printBadge();
+        DiscountType discountType = inputDay();
+        Order order = inputOrder();
+        printDayAndOrder(discountType, order);
+        printTotalPriceAndGiftMenu(discountType, order);
+        calculateDiscounts(discountType, order);
     }
 
-    private void inputDay() {
+    private DiscountType inputDay() {
         outputView.printDayInputMessage();
-        discountType = inputView.inputDay();
+        DiscountType discountType = null;
+        while (discountType == null) {
+            try {
+                String input = inputView.inputDay();
+                discountType = new DiscountType(input);
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        return discountType;
     }
 
-    private void inputOrder() {
+    private Order inputOrder() {
         outputView.printOrderInputMessage();
-        order = inputView.inputOrder();
+        Order order = null;
+        while (order == null) {
+            try {
+                String input = inputView.inputOrder();
+                order = new Order(input);
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        return order;
     }
 
-    private void printDayAndOrder() {
+    private void printDayAndOrder(DiscountType discountType, Order order) {
         discountType.giftEventCheck(order.calculateTotalPrice());
         outputView.printDayMessage(discountType.getDay());
         outputView.printOrderMenuMessage(order);
     }
 
-    private void printTotalPriceAndGiftMenu() {
+    private void printTotalPriceAndGiftMenu(DiscountType discountType, Order order) {
         outputView.printTotalPriceBeforeDiscountMessage(order);
         outputView.printGiftMenuMessage(discountType.giftEventCheck(order.calculateTotalPrice()));
     }
 
-    private void calculateDiscounts() {
-        discountCalculator = new DiscountCalculator();
+    private void calculateDiscounts(DiscountType discountType, Order order) {
+        DiscountCalculator discountCalculator = new DiscountCalculator();
         discountCalculator.calculateChristmasDiscount(discountType.getDay(), discountType.christmasDiscountCheck(), order.calculateTotalPrice());
         discountCalculator.calculateStarDiscount(discountType.starDiscountCheck(), order.calculateTotalPrice());
         discountCalculator.calculateWeekendDiscount(order, discountType.weekDiscountCheck(), order.calculateTotalPrice());
         discountCalculator.calculateGiftEvent(discountType.giftEventCheck(order.calculateTotalPrice()));
+        printDiscountDetails(discountCalculator, discountType.weekDiscountCheck(), order.calculateTotalPrice());
     }
 
-    private void printDiscountDetails() {
-        outputView.printBenefitDetailsMessage(discountCalculator, discountType.weekDiscountCheck());
+    private void printDiscountDetails(DiscountCalculator discountCalculator, String weekDiscountType, int totalPrice) {
+        outputView.printBenefitDetailsMessage(discountCalculator, weekDiscountType);
         outputView.printTotalBenefitAmountMessage(discountCalculator);
-        outputView.printExpectedPaymentAfterDiscount(order.calculateTotalPrice(), discountCalculator.totalDiscount());
+        outputView.printExpectedPaymentAfterDiscount(totalPrice, discountCalculator.totalDiscount());
+        assignBadge(discountCalculator.totalDiscount());
     }
 
-    private void assignBadge() {
-        eventBadge = new EventBadge();
-        eventBadge.eventBadge(discountCalculator.totalDiscount());
+    private void assignBadge(int totalDiscount) {
+        EventBadge eventBadge = new EventBadge();
+        eventBadge.eventBadge(totalDiscount);
+        printBadge(eventBadge.getBadge());
     }
 
-    private void printBadge() {
-        outputView.printEventBadgeMessage(eventBadge.getBadge());
+    private void printBadge(String badge) {
+        outputView.printEventBadgeMessage(badge);
     }
 }
