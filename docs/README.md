@@ -46,25 +46,13 @@
    - [x]  날짜가 weekend에 있으면 메인 반환없으면 디저트 반환 (**`weekDiscountCheck()`**)
    - [x]  총 금액이 12만원 이상이면 true반환 (**`giftEventCheck(int totalPrize)`**)
 - [x]  **DiscountCalculator**
-   - int christmasDiscount
-   - int starDiscount
-   - int weekDiscount
-   - int giftEvent
    - [x]  크리스마스 할인 계산 후 반환 (**`calculateChristmasDiscount(int day, boolean isChristmasDiscount)`**)
    - [x]  별 표시된 날짜의 할인 계산 후 반환 (**`calculateStarDiscount(boolean isStarDiscount)`**)
    - [x]  주말 할인을 계산 후 반환 (**`calculateWeekendDiscount(Order order, String weekDiscountType)`**)
    - [x]  증정품 가격 반환 (**`calculateGiftEvent(boolean isGiftEvent)`**)
-   - [x]  총 할인금액 반환 (**`totalDiscount()`**)
-   - [x]  날짜 반환 (**`getDay()`**)
-   - [x]  크리스마스 할인 금액 반환 (**`getChristmasDiscount()`**)
-   - [x]  별 표시된 날짜 할인 금액 반환 (**`getStarDiscount()`**)
-   - [x]  주말 할인 금액 반환 (**`getWeekDiscount()`**)
-   - [x]  증정 이벤트 금액 반환 (**`getGiftEvent()`**)
 - [x]  **EventBadge**
-   - String badge
    - [x]  배지 선정(**`eventBadge(int totalDiscount)`**)
-   - [x]  배지 반환 (**`getBadge()`**)
-
+ 
 ## **뷰 (View)**
 
 - [x]  InputView
