@@ -61,7 +61,6 @@ public class ChristmasController {
     }
 
     private void calculateDiscounts(DiscountType discountType, Order order) {
-        // DiscountCalculator의 객체 생성이 필요 없음
         int christmasDiscount = DiscountCalculator.calculateChristmasDiscount(discountType.getDay(), discountType.christmasDiscountCheck(), order.calculateTotalPrice());
         int starDiscount = DiscountCalculator.calculateStarDiscount(discountType.starDiscountCheck(), order.calculateTotalPrice());
         int weekendDiscount = DiscountCalculator.calculateWeekendDiscount(order, discountType.weekDiscountCheck(), order.calculateTotalPrice());
@@ -79,9 +78,8 @@ public class ChristmasController {
     }
 
     private void assignBadge(int totalDiscount) {
-        EventBadge eventBadge = new EventBadge();
-        eventBadge.eventBadge(totalDiscount);
-        printBadge(eventBadge.getBadge());
+        String badge = EventBadge.eventBadge(totalDiscount);
+        printBadge(badge);
     }
 
     private void printBadge(String badge) {
