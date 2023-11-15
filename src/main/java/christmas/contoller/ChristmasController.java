@@ -61,17 +61,23 @@ public class ChristmasController {
     }
 
     private void calculateDiscounts(DiscountType discountType, Order order) {
-        int christmasDiscount = DiscountCalculator.calculateChristmasDiscount(discountType.getDay(), discountType.christmasDiscountCheck(), order.calculateTotalPrice());
-        int starDiscount = DiscountCalculator.calculateStarDiscount(discountType.starDiscountCheck(), order.calculateTotalPrice());
-        int weekendDiscount = DiscountCalculator.calculateWeekendDiscount(order, discountType.weekDiscountCheck(), order.calculateTotalPrice());
+        int christmasDiscount = DiscountCalculator.calculateChristmasDiscount(discountType.getDay(),
+                discountType.christmasDiscountCheck(), order.calculateTotalPrice());
+        int starDiscount = DiscountCalculator.calculateStarDiscount(discountType.starDiscountCheck(),
+                order.calculateTotalPrice());
+        int weekendDiscount = DiscountCalculator.calculateWeekendDiscount(order, discountType.weekDiscountCheck(),
+                order.calculateTotalPrice());
         int giftEvent = DiscountCalculator.calculateGiftEvent(discountType.giftEventCheck(order.calculateTotalPrice()));
 
         int totalDiscount = christmasDiscount + starDiscount + weekendDiscount + giftEvent;
-        printDiscountDetails(christmasDiscount, starDiscount, weekendDiscount, giftEvent, totalDiscount, discountType.weekDiscountCheck(), order.calculateTotalPrice());
+        printDiscountDetails(christmasDiscount, starDiscount, weekendDiscount, giftEvent, totalDiscount,
+                discountType.weekDiscountCheck(), order.calculateTotalPrice());
     }
 
-    private void printDiscountDetails(int christmasDiscount, int starDiscount, int weekendDiscount, int giftEvent, int totalDiscount, String weekDiscountType, int totalPrice) {
-        outputView.printBenefitDetailsMessage(christmasDiscount, starDiscount, weekendDiscount, giftEvent, weekDiscountType, totalDiscount);
+    private void printDiscountDetails(int christmasDiscount, int starDiscount, int weekendDiscount, int giftEvent,
+                                      int totalDiscount, String weekDiscountType, int totalPrice) {
+        outputView.printBenefitDetailsMessage(christmasDiscount, starDiscount, weekendDiscount, giftEvent,
+                weekDiscountType, totalDiscount);
         outputView.printTotalBenefitAmountMessage(totalDiscount);
         outputView.printExpectedPaymentAfterDiscount(totalPrice, totalDiscount);
         assignBadge(totalDiscount);

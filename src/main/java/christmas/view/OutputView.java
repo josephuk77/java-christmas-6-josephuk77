@@ -48,7 +48,8 @@ public class OutputView {
         }
     }
 
-    public void printBenefitDetailsMessage(int christmasDiscount, int starDiscount, int weekDiscount, int giftEvent, String weekDiscountType, int totalDiscount) {
+    public void printBenefitDetailsMessage(int christmasDiscount, int starDiscount, int weekDiscount, int giftEvent,
+                                           String weekDiscountType, int totalDiscount) {
         System.out.print(RunMessage.BENEFIT_DETAILS.getMessage());
 
         printChristmasDiscount(christmasDiscount);

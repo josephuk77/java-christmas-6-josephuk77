@@ -22,7 +22,6 @@ public class DiscountTypeTest {
     void createByInvalidRange() {
         String day = "0";
 
-
         assertThatThrownBy(() -> new DiscountType(day))
                 .isInstanceOf(IllegalArgumentException.class);
     }
@@ -31,7 +30,6 @@ public class DiscountTypeTest {
     @DisplayName("날짜가 공백이 들어오면 예외가 발생한다.")
     void createByInvalidGap() {
         String day = "";
-
 
         assertThatThrownBy(() -> new DiscountType(day))
                 .isInstanceOf(IllegalArgumentException.class);
@@ -76,6 +74,7 @@ public class DiscountTypeTest {
 
         assertThat(discountType.starDiscountCheck()).isEqualTo(true);
     }
+
     @Test
     @DisplayName("날짜가 달력에 별이 없는 날짜일 때 false를 반환한다")
     void starDiscountFalseTest() {
