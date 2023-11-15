@@ -1,24 +1,16 @@
 package christmas.domain;
 
 public class EventBadge {
-    private String badge;
-
-    public void eventBadge(int totalDiscount) {
+    public static String  eventBadge(int totalDiscount) {
         if (totalDiscount >= 20000) {
-            badge = "산타";
+            return  "산타";
         }
         if (totalDiscount >= 10000 && totalDiscount < 20000) {
-            badge = "트리";
+            return "트리";
         }
         if (totalDiscount >= 5000 && totalDiscount < 10000) {
-            badge = "별";
+            return "별";
         }
-        if (totalDiscount < 5000) {
-            badge = "없음";
-        }
-    }
-
-    public String getBadge() {
-        return badge;
+            return  "없음";
     }
 }
