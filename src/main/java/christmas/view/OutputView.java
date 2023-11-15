@@ -49,29 +49,28 @@ public class OutputView {
         }
     }
 
-    public void printBenefitDetailsMessage(DiscountCalculator discountCalculator, String weekDiscountType) {
+    public void printBenefitDetailsMessage(int christmasDiscount, int starDiscount, int weekDiscount, int giftEvent, String weekDiscountType, int totalDiscount) {
         System.out.print(RunMessage.BENEFIT_DETAILS.getMessage());
 
-        printChristmasDiscount(discountCalculator);
-        printWeekDiscount(discountCalculator, weekDiscountType);
-        printStarDiscount(discountCalculator);
-        printGiftEvent(discountCalculator);
+        printChristmasDiscount(christmasDiscount);
+        printWeekDiscount(weekDiscount, weekDiscountType);
+        printStarDiscount(starDiscount);
+        printGiftEvent(giftEvent);
 
-        if (discountCalculator.totalDiscount() == 0) {
+        if (totalDiscount == 0) {
             System.out.print(RunMessage.NONE.getMessage());
         }
     }
 
-    private void printChristmasDiscount(DiscountCalculator discountCalculator) {
-        if (discountCalculator.getChristmasDiscount() != 0) {
-            System.out.printf(RunMessage.CHRISTMAS_DISCOUNT.getMessage(),
-                    String.format("%,d", discountCalculator.getChristmasDiscount()));
+    private void printChristmasDiscount(int christmasDiscount) {
+        if (christmasDiscount != 0) {
+            System.out.printf(RunMessage.CHRISTMAS_DISCOUNT.getMessage(), String.format("%,d", christmasDiscount));
         }
     }
 
-    private void printWeekDiscount(DiscountCalculator discountCalculator, String weekDiscountType) {
-        if (discountCalculator.getWeekDiscount() != 0) {
-            String formattedWeekDiscount = String.format("%,d", discountCalculator.getWeekDiscount());
+    private void printWeekDiscount(int weekDiscount, String weekDiscountType) {
+        if (weekDiscount != 0) {
+            String formattedWeekDiscount = String.format("%,d", weekDiscount);
             if (weekDiscountType.equals("디저트")) {
                 System.out.printf(RunMessage.WEEKDAY_DISCOUNT.getMessage(), formattedWeekDiscount);
             }
@@ -81,29 +80,27 @@ public class OutputView {
         }
     }
 
-    private void printStarDiscount(DiscountCalculator discountCalculator) {
-        if (discountCalculator.getStarDiscount() != 0) {
-            System.out.printf(RunMessage.SPECIAL_DISCOUNT.getMessage(),
-                    String.format("%,d", discountCalculator.getStarDiscount()));
+    private void printStarDiscount(int starDiscount) {
+        if (starDiscount != 0) {
+            System.out.printf(RunMessage.SPECIAL_DISCOUNT.getMessage(), String.format("%,d", starDiscount));
         }
     }
 
-    private void printGiftEvent(DiscountCalculator discountCalculator) {
-        if (discountCalculator.getGiftEvent() != 0) {
+    private void printGiftEvent(int giftEvent) {
+        if (giftEvent != 0) {
             System.out.print(RunMessage.GIFT_EVENT.getMessage());
         }
     }
 
-    public void printTotalBenefitAmountMessage(DiscountCalculator discountCalculator) {
+    public void printTotalBenefitAmountMessage(int totalDiscount) {
         System.out.print(RunMessage.TOTLA_BENEFIT.getMessage());
-        if (discountCalculator.totalDiscount() == 0) {
-            System.out.printf(RunMessage.AMOUNT.getMessage(),0);
-        }
-        if (discountCalculator.totalDiscount() != 0) {
-            System.out.printf(RunMessage.MINUS_AMOUNT.getMessage(),
-                    String.format("%,d", discountCalculator.totalDiscount()));
+        if (totalDiscount == 0) {
+            System.out.printf(RunMessage.AMOUNT.getMessage(), 0);
+        } else {
+            System.out.printf(RunMessage.MINUS_AMOUNT.getMessage(), String.format("%,d", totalDiscount));
         }
     }
+
 
     public void printExpectedPaymentAfterDiscount(int totalPrice, int totalDiscount) {
         System.out.print(RunMessage.AFTER_DISCOUNT.getMessage());
