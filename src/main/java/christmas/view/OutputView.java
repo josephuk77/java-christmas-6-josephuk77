@@ -1,7 +1,6 @@
 package christmas.view;
 
 import christmas.Message.RunMessage;
-import christmas.domain.DiscountCalculator;
 import christmas.domain.MenuItem;
 import christmas.domain.Order;
 import java.util.Map;
